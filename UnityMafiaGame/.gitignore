@@ -1,0 +1,62 @@
+﻿# ===================================
+# Unity generated folders (never commit)
+# ===================================
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+# Crash logs
+sysinfo.txt
+
+# ===================================
+# Unity cache / metadata
+# ===================================
+ExportedObj/
+.consulo/
+*.apk
+*.unitypackage
+
+# ===================================
+# Auto-generated files (IDE)
+# ===================================
+# Rider / JetBrains
+.idea/
+*.sln
+*.csproj
+*.unityproj
+*.pidb
+*.user
+*.userprefs
+*.booproj
+*.svd
+
+# VSCode
+.vscode/
+
+# Visual Studio
+.vs/
+*.suo
+*.tmp
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+# ===================================
+# Unity Cloud / Collaborate legacy
+# ===================================
+.collab/
+.collabignore
+
+# ===================================
+# OS generated files
+# ===================================
+.DS_Store
+Thumbs.db
+desktop.ini
