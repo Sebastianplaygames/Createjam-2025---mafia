@@ -11,6 +11,7 @@ public class playerMelee : MonoBehaviour
     public int damage = 1;
     public float attackRate = 2f;
     private float nextAttackTime = 0f;
+    public WeaponSwitcher switcher;
 
 
     // Update is called once per frame
@@ -18,6 +19,7 @@ public class playerMelee : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Mouse0) && Time.time >= nextAttackTime)
         {
+            switcher.ShowMelee(); 
             Attack();
             nextAttackTime = Time.time + 1f / attackRate;
         }
