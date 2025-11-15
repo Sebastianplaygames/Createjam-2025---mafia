@@ -12,6 +12,8 @@ public class PlayerRanged : MonoBehaviour
     private float nextFireTime = 0f;
     private Transform player;
 
+    private AudioSource gun;
+
     public WeaponSwitcher switcher;
 
 
@@ -20,6 +22,10 @@ public class PlayerRanged : MonoBehaviour
         player = transform;
     }
 
+    private void Awake()
+    {
+        gun = GetComponent<AudioSource>();
+    }
     private void Update()
     {
         if (Input.GetMouseButton(1) && Time.time >= nextFireTime)
@@ -44,6 +50,7 @@ public class PlayerRanged : MonoBehaviour
 
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         bulletObj.transform.rotation = Quaternion.Euler(0, 0, angle);
-    }
+        gun.Play(); 
 
+    }
 }

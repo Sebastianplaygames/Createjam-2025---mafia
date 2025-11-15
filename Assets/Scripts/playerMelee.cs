@@ -11,6 +11,7 @@ public class playerMelee : MonoBehaviour
     public int damage = 1;
     public float attackRate = 2f;
     private float nextAttackTime = 0f;
+    private AudioSource Broom;
     public WeaponSwitcher switcher;
 
 
@@ -24,8 +25,10 @@ public class playerMelee : MonoBehaviour
             nextAttackTime = Time.time + 1f / attackRate;
         }
     }
-
-    void Attack()
+    private void Awake()
+    {
+        Broom = GetComponent<AudioSource>();
+    }    void Attack()
 {
     StartCoroutine(Swing());
     Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
@@ -38,6 +41,7 @@ public class playerMelee : MonoBehaviour
             damagable.TakeDamage(damage);
         }
     }
+    Broom.Play();
 }
 
     void OnDrawGizmosSelected()
