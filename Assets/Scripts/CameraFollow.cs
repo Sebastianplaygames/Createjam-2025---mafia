@@ -2,38 +2,37 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     [Header("Targets")]
     public Transform player;
     public Rigidbody2D playerrigidbody;
 
     [Header("Camera Settings")]
-    public float smoothSpeed = 10f;
+    public float smoothTime = 0.2f; // Smooth time instead of speed
     public Vector3 offset = new Vector3(0, 0, -10);
 
     [Header("Look Ahead")]
     public float movementLookAhead = 2f;
     public float aimLookAhead = 3f;
-    // Update is called once per frame
+
+    private Vector3 velocity = Vector3.zero; // for SmoothDamp
+
     void LateUpdate()
     {
         if (player == null) return;
 
-        // Movement look-ahead (like option 2)
-        Vector3 moveOffset = (Vector3)playerrigidbody.linearVelocity.normalized * movementLookAhead;
+        // Movement look-ahead, scaled by actual speed
+        Vector3 moveOffset = (Vector3)playerrigidbody.linearVelocity * 0.1f * movementLookAhead;
 
         // Aim look-ahead (toward mouse)
         Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Vector3 aimDir = (mouseWorldPos - player.position).normalized;
-        Vector3 aimOffset = aimDir * aimLookAhead;
+        Vector3 aimDir = (mouseWorldPos - player.position);
+        aimDir.z = 0; // Ignore z-axis
+        Vector3 aimOffset = aimDir.normalized * aimLookAhead;
 
-        // Final camera position
-        Vector3 desiredPosition = player.position + moveOffset + aimOffset + offset;
+        // Combine offsets
+        Vector3 targetPosition = player.position + moveOffset + aimOffset + offset;
 
-        transform.position = Vector3.Lerp(
-            transform.position,
-            desiredPosition,
-            smoothSpeed * Time.deltaTime
-        );
+        // Smooth camera movement
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);
     }
 }
