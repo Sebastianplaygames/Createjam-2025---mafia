@@ -1,7 +1,7 @@
-using System;
+using System;using DefaultNamespace;
 using UnityEngine;
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : MonoBehaviour, IDamagable
 {
     public bool rangedEnemy;
     public Rigidbody2D rb;
