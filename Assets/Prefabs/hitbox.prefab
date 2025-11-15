@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6469430040212677766}
   - component: {fileID: 264092983338303253}
   - component: {fileID: 5953253981970169909}
-  - component: {fileID: 2810873821238107387}
+  - component: {fileID: 1113791782061271521}
   m_Layer: 9
   m_Name: hitbox
   m_TagString: Untagged
@@ -4942,7 +4942,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &2810873821238107387
+--- !u!114 &1113791782061271521
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4951,11 +4951,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3176093036101576329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f2b4535115d41a09b06b4606e693cc5, type: 3}
+  m_Script: {fileID: 11500000, guid: 44e94ced4434480da725168ad75c5ff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hitbox
   damage: 1
-  lifetime: 0.2
-  followParent: 0
-  spriteTransform: {fileID: 0}
-  spin: 0
+  lifetime: 0.1
