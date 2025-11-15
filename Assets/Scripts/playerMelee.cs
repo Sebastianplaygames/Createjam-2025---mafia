@@ -46,8 +46,8 @@ public class playerMelee : MonoBehaviour
     }
     IEnumerator Swing()
     {
-        float swingAngle = -120f;
-        float swingTime = 0.15f;
+        float swingAngle = -110f;
+        float swingTime = 0.25f;
 
         Quaternion startRot = transform.rotation;
         Quaternion endRot = startRot * Quaternion.Euler(0, 0, swingAngle);
