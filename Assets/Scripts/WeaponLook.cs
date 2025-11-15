@@ -3,11 +3,14 @@ using UnityEngine;
 public class WeaponLook : MonoBehaviour
 {
     public float offsetY = -0.5f;
-    private Transform player;    
+    public float minAngle = -40f; 
+    public float maxAngle = 70f;  
+
+    private Transform player;
 
     void Start()
     {
-        player = transform.parent; // make sure weapon is child of player
+        player = transform.parent;
     }
 
     void Update()
@@ -16,24 +19,26 @@ public class WeaponLook : MonoBehaviour
         mousePos3.z = 0;
 
         Vector2 mousePos = mousePos3;
-        Vector2 weaponPos = transform.position;
-        Vector2 pivotOffset = new Vector2(0, offsetY);
+        Vector2 pivot = (Vector2)transform.position + new Vector2(0, offsetY);
 
-        Vector2 direction = (mousePos - (weaponPos + pivotOffset));
+        Vector2 dir = mousePos - pivot;
 
-        // Calculate angle normally
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        bool facingLeft = player.localScale.x < 0;
 
+        if (facingLeft)
+            dir.x = -dir.x;
+ 
 
-        if (player.localScale.x < 0)
-        {
-            angle = -angle;
-            angle = 180 - angle;
-        } else
-        {
-            angle = angle;
-        }
+        // Local (facing-relative) angle
+        float localAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
-        transform.rotation = Quaternion.Euler(0, 0, angle);
+        // Clamp local angle
+        localAngle = Mathf.Clamp(localAngle, minAngle, maxAngle);
+
+        // Convert back into world space
+        float finalAngle = facingLeft ? (-localAngle) : localAngle;
+
+        // Apply rotation
+        transform.rotation = Quaternion.Euler(0, 0, finalAngle);
     }
 }
