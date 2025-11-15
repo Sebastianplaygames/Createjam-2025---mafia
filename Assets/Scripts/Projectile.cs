@@ -19,7 +19,10 @@ using UnityEngine;
 
         private void Update()
         {
-            transform.Translate(direction * speed * Time.deltaTime);
+            Debug.Log("Projectile dir = " + direction);
+
+            transform.Translate(direction * speed * Time.deltaTime, Space.World);
+
 
             if (spriteTransform != null)
             {
