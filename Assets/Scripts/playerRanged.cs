@@ -12,6 +12,7 @@ public class PlayerRanged : MonoBehaviour
     private float nextFireTime = 0f;
     private Transform player;
 
+    public WeaponSwitcher switcher;
 
 
     private void Start()
@@ -23,6 +24,7 @@ public class PlayerRanged : MonoBehaviour
     {
         if (Input.GetMouseButton(1) && Time.time >= nextFireTime)
         {
+            switcher.ShowRanged();
             Shoot();
             nextFireTime = Time.time + (1f / fireRate);
         }
