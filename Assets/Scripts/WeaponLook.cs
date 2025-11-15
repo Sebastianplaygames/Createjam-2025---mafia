@@ -2,27 +2,38 @@ using UnityEngine;
 
 public class WeaponLook : MonoBehaviour
 {
-    public float offsetY = -0.5f; // how far down to shift the rotation origin
+    public float offsetY = -0.5f;
+    private Transform player;    
 
-    public bool facingRight = true;
+    void Start()
+    {
+        player = transform.parent; // make sure weapon is child of player
+    }
+
     void Update()
     {
-        // get mouse position
         Vector3 mousePos3 = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos3.z = 0;
 
-        Vector2 pivot = (Vector2)transform.position + new Vector2(0, offsetY);
-        Vector2 direction = (mousePos3 - (Vector3)pivot);
+        Vector2 mousePos = mousePos3;
+        Vector2 weaponPos = transform.position;
+        Vector2 pivotOffset = new Vector2(0, offsetY);
 
+        Vector2 direction = (mousePos - (weaponPos + pivotOffset));
+
+        // Calculate angle normally
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
 
 
-        transform.rotation = Quaternion.Euler(0, 0, angle);
-    }
+        if (player.localScale.x < 0)
+        {
+            angle = -angle;
+            angle = 180 - angle;
+        } else
+        {
+            angle = angle;
+        }
 
-    // call this from player movement
-    public void SetFacing(bool isRight)
-    {
-        facingRight = isRight;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 }
