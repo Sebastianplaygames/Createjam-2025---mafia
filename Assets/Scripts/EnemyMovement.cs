@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] Transform target;
+    private Transform target;
     private NavMeshAgent agent;
 
     private void Awake()
