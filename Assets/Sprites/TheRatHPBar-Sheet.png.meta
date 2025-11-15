@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: bf81594711d127840a35b6a8a6d88896
+guid: cd5c7ede9f16df546868c6b648dfcf71
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -717542701250275071
-    second: 1911Colt_0
+      213: -3844395545672855435
+    second: TheRatHPBar-Sheet_0
+  - first:
+      213: -2515320029893338691
+    second: TheRatHPBar-Sheet_1
+  - first:
+      213: -2623437720397162668
+    second: TheRatHPBar-Sheet_2
+  - first:
+      213: 6144584764639029759
+    second: TheRatHPBar-Sheet_3
+  - first:
+      213: -9046167481177146403
+    second: TheRatHPBar-Sheet_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +49,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -84,19 +96,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -111,6 +110,19 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
     buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -165,23 +177,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 1911Colt_0
+      name: TheRatHPBar-Sheet_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 11
-        width: 22
-        height: 12
-      alignment: 9
-      pivot: {x: 0.20375556, y: 0.4800954}
+        x: 10
+        y: 4
+        width: 46
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1099dc407b6ca06f0800000000000000
-      internalID: -717542701250275071
+      spriteID: 5705314ae96f5aac0800000000000000
+      internalID: -3844395545672855435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheRatHPBar-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 4
+        width: 45
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db958c172c9c71dd0800000000000000
+      internalID: -2515320029893338691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheRatHPBar-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 11
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 457dd59fa4da79bd0800000000000000
+      internalID: -2623437720397162668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheRatHPBar-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 11
+        width: 39
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff9269cb943f54550800000000000000
+      internalID: 6144584764639029759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TheRatHPBar-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 11
+        width: 37
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddbfeb1ca9e857280800000000000000
+      internalID: -9046167481177146403
       vertices: []
       indices: 
       edges: []
@@ -190,7 +290,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 68de3dc4aee331b4a9c68c8e2c2d36b7
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -200,7 +300,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      1911Colt_0: -717542701250275071
+      TheRatHPBar-Sheet_0: -3844395545672855435
+      TheRatHPBar-Sheet_1: -2515320029893338691
+      TheRatHPBar-Sheet_2: -2623437720397162668
+      TheRatHPBar-Sheet_3: 6144584764639029759
+      TheRatHPBar-Sheet_4: -9046167481177146403
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
