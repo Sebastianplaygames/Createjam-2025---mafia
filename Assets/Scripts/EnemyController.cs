@@ -1,5 +1,6 @@
 using System;using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour, IDamagable
 {
@@ -43,12 +44,15 @@ public class EnemyController : MonoBehaviour, IDamagable
         switch (currentState)
         {
             case EnemyState.Idle:
+                movement.faceMovement();
                 if (dist < aggroRange)
                 {
                     currentState = EnemyState.Chase;
+                    targetPlayer();
                 }
                 break;
             case EnemyState.Chase:
+                movement.faceTarget(player);
                 if (rangedEnemy)
                 {
                     movement.KeepDistance(player, attackRange);
@@ -57,17 +61,20 @@ public class EnemyController : MonoBehaviour, IDamagable
                 {
                     movement.MoveTo(player);
                 }
-                if (dist < attackRange)
+                if (dist < attackRange + 3f)
                 {
                     currentState = EnemyState.Attack;
+                    targetPlayer();
                 }
 
                 if (dist > aggroRange * leaveAggroMultiplier)
                 {
                     currentState = EnemyState.Idle;
+                    targetNothing();
                 }
                 break;
             case EnemyState.Attack:
+                movement.faceTarget(player);
                 movement.stop();
                 attackTimer -= Time.deltaTime;
                 if (attackTimer <= 0f)
@@ -79,6 +86,7 @@ public class EnemyController : MonoBehaviour, IDamagable
                 if (dist > attackRange + 0.5f)
                 {
                     currentState = EnemyState.Chase;
+                    targetPlayer();
                 }
                 break;
         }
@@ -103,5 +111,23 @@ public class EnemyController : MonoBehaviour, IDamagable
     {
         Debug.Log("enemy attacks");
     }
+
+    public void targetPlayer()
+    {
+        if (behavior is rangedEnemyBehaviour ranged)
+        {
+            ranged.PointGunAt(player);
+        }
+    }
+
+    public void targetNothing()
+    {
+        if (behavior is rangedEnemyBehaviour ranged)
+        {
+            ranged.clearTarget();
+        }
+    }
+    
+    
     
 }

@@ -9,6 +9,9 @@ using UnityEngine;
         public float lifeTime = 3f;
         public Vector2 direction;
 
+        [Header("Visuals")] public float spin = 360f;
+        [SerializeField]public Transform spriteTransform;
+
         private void Start()
         {
             Destroy(gameObject, lifeTime);
@@ -17,6 +20,11 @@ using UnityEngine;
         private void Update()
         {
             transform.Translate(direction * speed * Time.deltaTime);
+
+            if (spriteTransform != null)
+            {
+                spriteTransform.Rotate(Vector3.forward, spin * Time.deltaTime);
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D other)

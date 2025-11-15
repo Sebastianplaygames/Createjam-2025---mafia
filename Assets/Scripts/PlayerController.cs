@@ -13,10 +13,14 @@ public class PlayerController : MonoBehaviour, IDamagable
     private Vector2 input;
     private Vector2 desiredVelocity;
 
+        private Animator animator;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -28,6 +32,17 @@ public class PlayerController : MonoBehaviour, IDamagable
      ).normalized;
 
     desiredVelocity = input * moveSpeed;
+
+    animator.SetBool("IsRunning", input.magnitude > 0.1f);
+
+    if (input.x > 0.1f)
+{
+    transform.localScale = new Vector3(1, 1, 1);
+}
+else if (input.x < -0.1f)
+{
+    transform.localScale = new Vector3(-1, 1, 1);
+}
     }
 
 
@@ -36,7 +51,7 @@ public class PlayerController : MonoBehaviour, IDamagable
         Vector2 velocity = playerRigidbody.linearVelocity;
 
         // if player is moving
-        if(input.magnitude > 0.1f)
+        if(input.magnitude > 0.01f)
         {
             velocity = Vector2.MoveTowards(
                 velocity,
