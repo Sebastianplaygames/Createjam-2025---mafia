@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour
     private Transform target;
     private NavMeshAgent agent;
     public Transform gunPivot;
+    public SpriteRenderer body;
     private float lastX;
 
     private void Awake()
@@ -18,6 +19,8 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
+        if (agent.isStopped ) return;
+        
         if(target != null)
         {
             float dx = target.position.x - transform.position.x;
@@ -61,7 +64,7 @@ public class EnemyMovement : MonoBehaviour
             Vector2 newPos = (Vector2)transform.position + dir * 2f;
             MoveTo(newPos);
         }
-        else if (dist > desiredRange * 1.2f)
+        else if (dist * 1.2f > desiredRange)
         {
             MoveTo(target);
         }
@@ -73,11 +76,18 @@ public class EnemyMovement : MonoBehaviour
 
     public void setFacing(int dir)
     {
-        if (gunPivot == null) return;
+        if (gunPivot != null)
+        {
+            Vector3 gunScale = gunPivot.localScale;
+            gunScale.x = Mathf.Abs(gunScale.x) * dir;
+            gunPivot.localScale = gunScale;
+        }
 
-        Vector3 scale = gunPivot.localScale;
-        scale.x = MathF.Abs(scale.x) * dir;
-        gunPivot.localScale = scale;
+        if (body != null)
+        {
+            body.flipX = (dir > 0);
+        }
+
         lastX = dir;
     }
 

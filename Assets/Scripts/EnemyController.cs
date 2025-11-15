@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour, IDamagable
     public float moveSpeed = 5f;
     public float attackRange = 1f;
     public int health = 1;
-    public float leaveAggroMultiplier = 1.2f;
+    public float leaveAggroMultiplier = 1000000f;
     public float attackCooldown = 1f;
     private float attackTimer = 0f;
 
@@ -31,7 +31,7 @@ public class EnemyController : MonoBehaviour, IDamagable
     // Update is called once per frame
     void Update()
     {
-        animator.SetBool("isMoving", currentState == EnemyState.Idle);
+        animator.SetBool("isMoving", currentState == EnemyState.Chase);
         animator.SetBool("isAttacking", currentState == EnemyState.Attack);
         animator.SetBool("isDead", currentState == EnemyState.Dead);
         if (currentState == EnemyState.Dead)
@@ -44,7 +44,8 @@ public class EnemyController : MonoBehaviour, IDamagable
         switch (currentState)
         {
             case EnemyState.Idle:
-                movement.faceMovement();
+                movement.stop();
+                targetNothing();
                 if (dist < aggroRange)
                 {
                     currentState = EnemyState.Chase;
@@ -61,18 +62,21 @@ public class EnemyController : MonoBehaviour, IDamagable
                 {
                     movement.MoveTo(player);
                 }
-                if (dist < attackRange + 3f)
+                //enter attack
+                if (dist < attackRange * 1.5f)
                 {
+                    movement.stop();
                     currentState = EnemyState.Attack;
                     targetPlayer();
-                }
-
+                }break;
+                //leave aggro disabled because it was buggy, now enemies eternally chase you
+                /*
                 if (dist > aggroRange * leaveAggroMultiplier)
                 {
                     currentState = EnemyState.Idle;
                     targetNothing();
                 }
-                break;
+                break;*/
             case EnemyState.Attack:
                 movement.faceTarget(player);
                 movement.stop();
@@ -83,7 +87,8 @@ public class EnemyController : MonoBehaviour, IDamagable
                     behavior?.Attack(player);
                     attackTimer = attackCooldown;
                 }
-                if (dist > attackRange + 0.5f)
+                //chase after him!
+                if (dist > attackRange * 1.6f)
                 {
                     currentState = EnemyState.Chase;
                     targetPlayer();

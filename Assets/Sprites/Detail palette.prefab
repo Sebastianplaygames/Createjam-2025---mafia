@@ -2033,7 +2033,7 @@ GameObject:
   - component: {fileID: 299290879669116692}
   - component: {fileID: 4456597444851829549}
   m_Layer: 0
-  m_Name: City palette
+  m_Name: Detail palette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
