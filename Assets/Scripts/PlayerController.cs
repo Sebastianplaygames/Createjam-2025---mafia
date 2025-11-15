@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour, IDamagable
     public float acceleration = 20f;
     public float deceleration = 30f;
     public float directionalResponsiveness =100f;
-    public int health = 10;
+    public int health = 5;
+    public ParticleSystem deathParticle;
 
     private Vector2 input;
     private Vector2 desiredVelocity;
@@ -71,6 +72,12 @@ else if (input.x < -0.1f)
 
     public void TakeDamage(int damageAmount)
     {
+        if (deathParticle != null)
+        {
+            ParticleSystem blood = Instantiate(deathParticle, transform.position, Quaternion.identity);
+            Destroy(blood.gameObject, blood.main.duration + blood.main.startLifetime.constantMax);
+        }
+        
         health -= damageAmount;
         if (health <= 0)
         {
@@ -81,5 +88,6 @@ else if (input.x < -0.1f)
     {
         // Handle player death (e.g., play animation, restart level, etc.)
         Debug.Log("Player has died.");
+
     }
 }
