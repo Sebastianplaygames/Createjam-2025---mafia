@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour, IDamagable
     private Vector2 desiredVelocity;
 
     private Animator animator;
+    
     public WeaponLook weaponLook;
 
 
