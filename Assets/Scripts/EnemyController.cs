@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour, IDamagable
     public float leaveAggroMultiplier = 1000000f;
     public float attackCooldown = 1f;
     private float attackTimer = 0f;
+    public ParticleSystem deathParticle;
 
     public Animator animator;
 
@@ -100,6 +101,13 @@ public class EnemyController : MonoBehaviour, IDamagable
     public void TakeDamage(int damageAmount)
     {
         health -= damageAmount;
+
+        if (deathParticle != null)
+        {
+            ParticleSystem blood = Instantiate(deathParticle, transform.position, Quaternion.identity);
+            Destroy(blood.gameObject, blood.main.duration + blood.main.startLifetime.constantMax);
+        }
+        
         if (health <= 0)
         {
             Die();
@@ -110,6 +118,7 @@ public class EnemyController : MonoBehaviour, IDamagable
     {
         currentState = EnemyState.Dead;
         movement.stop();
+        Destroy(gameObject, 0.1f); // small delay so particle spawns first
     }
 
     public void DoAttack()
