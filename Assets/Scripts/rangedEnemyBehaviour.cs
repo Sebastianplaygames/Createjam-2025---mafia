@@ -19,15 +19,17 @@ public class rangedEnemyBehaviour : MonoBehaviour, IEnemyBehavior
 
     private void AimAtTarget()
     {
-        if(target == null || shootPoint == null) return;
+        if(target == null || shootPoint == null || gunTransform == null) return;
 
         Vector2 dir = (target.position - shootPoint.position).normalized;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
-        if (gunTransform != null)
+        float flip = MathF.Sign(gunTransform.parent.localScale.x);
+        if (flip < 0)
         {
-            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-            gunTransform.rotation = Quaternion.Euler(0, 0, angle);
+            angle += 180f; // rotate 180 degrees when mirrored
         }
+        gunTransform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     public void Attack(Transform player)
@@ -41,5 +43,15 @@ public class rangedEnemyBehaviour : MonoBehaviour, IEnemyBehavior
         Projectile p = proj.GetComponent<Projectile>();
         p.direction = dir;
         p.speed = projectileSpeed;
+    }
+
+    public void PointGunAt(Transform target)
+    {
+        this.target = target;
+    }
+
+    public void clearTarget()
+    {
+        target = null;
     }
 }

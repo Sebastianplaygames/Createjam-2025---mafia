@@ -6,6 +6,8 @@ public class EnemyMovement : MonoBehaviour
 {
     private Transform target;
     private NavMeshAgent agent;
+    public Transform gunPivot;
+    private float lastX;
 
     private void Awake()
     {
@@ -18,6 +20,13 @@ public class EnemyMovement : MonoBehaviour
     {
         if(target != null)
         {
+            float dx = target.position.x - transform.position.x;
+            if (Mathf.Abs(dx) > 0.01f)
+            {
+                setFacing(dx > 0 ? 1 : -1);
+            }
+
+            // Only move if needed
             agent.SetDestination(target.position);
         }
     }
@@ -61,4 +70,33 @@ public class EnemyMovement : MonoBehaviour
             stop();
         }
     }
+
+    public void setFacing(int dir)
+    {
+        if (gunPivot == null) return;
+
+        Vector3 scale = gunPivot.localScale;
+        scale.x = MathF.Abs(scale.x) * dir;
+        gunPivot.localScale = scale;
+        lastX = dir;
+    }
+
+    public void faceTarget(Transform target)
+    {
+        if (target == null) return;
+        float dx = target.position.x - transform.position.x;
+        if (MathF.Abs(dx)> 0.01f)
+        {
+            setFacing(dx > 0 ? 1 : -1);
+        }
+    }
+
+    public void faceMovement()
+    {
+        if (MathF.Abs(agent.velocity.x) > 0.01f)
+        {
+            setFacing(agent.velocity.x > 0 ? 1 : -1);
+        }
+    }
+    
 }
