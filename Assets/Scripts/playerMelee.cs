@@ -44,24 +44,30 @@ public class playerMelee : MonoBehaviour
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
-    IEnumerator Swing()
+IEnumerator Swing()
+{
+    float baseSwingAngle = -110f; // default slash direction
+
+    // Detect facing direction
+    float facing = transform.parent.localScale.x;  // assumes weapon is child of player
+    float swingAngle = (facing > 0) ? baseSwingAngle : -baseSwingAngle;
+
+    float swingTime = 0.25f;
+
+    Quaternion startRot = transform.rotation;
+    Quaternion endRot = startRot * Quaternion.Euler(0, 0, swingAngle);
+
+    float t = 0;
+    while (t < swingTime)
     {
-        float swingAngle = -110f;
-        float swingTime = 0.25f;
-
-        Quaternion startRot = transform.rotation;
-        Quaternion endRot = startRot * Quaternion.Euler(0, 0, swingAngle);
-
-        float t = 0;
-        while (t < swingTime)
-        {
-            t += Time.deltaTime;
-            transform.rotation = Quaternion.Lerp(startRot, endRot, t / swingTime);
-            yield return null;
-        }
-
-        transform.rotation = startRot;
+        t += Time.deltaTime;
+        transform.rotation = Quaternion.Lerp(startRot, endRot, t / swingTime);
+        yield return null;
     }
+
+    transform.rotation = startRot;
+Debug.Log("Current Rotation: " + transform.rotation.eulerAngles);
+}
 
 
 }
