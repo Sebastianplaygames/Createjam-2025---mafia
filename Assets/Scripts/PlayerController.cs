@@ -43,10 +43,6 @@ else if (input.x < -0.1f)
 {
     transform.localScale = new Vector3(-1, 1, 1);
 }
-    if (input.x > 0.1f)
-        weaponLook.SetFacing(true);   
-    else if (input.x < -0.1f)
-        weaponLook.SetFacing(false);
     }
 
 

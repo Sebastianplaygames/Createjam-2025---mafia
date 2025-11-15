@@ -2,42 +2,43 @@ using UnityEngine;
 
 public class WeaponLook : MonoBehaviour
 {
-    public float offsetY = -0.5f; // how far down to shift the rotation origin
-    public float rightMin = -60f;
-    public float rightMax = 60f;
+    public float offsetY = -0.5f;
+    public float minAngle = -40f; 
+    public float maxAngle = 70f;  
 
-    public float leftMin = 120f;
-    public float leftMax = 240f;
-    public bool facingRight = true;
-    public float spriteAngleOffset = -180f;
+    private Transform player;
+
+    void Start()
+    {
+        player = transform.parent;
+    }
+
     void Update()
     {
-        // get mouse position
         Vector3 mousePos3 = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos3.z = 0;
 
+        Vector2 mousePos = mousePos3;
         Vector2 pivot = (Vector2)transform.position + new Vector2(0, offsetY);
-        Vector2 direction = (mousePos3 - (Vector3)pivot);
 
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        angle += spriteAngleOffset;
+        Vector2 dir = mousePos - pivot;
 
+        bool facingLeft = player.localScale.x < 0;
 
-        if (facingRight)
-        {
-            angle = Mathf.Clamp(angle, rightMin, rightMax);
-        }
-        else
-        {
-            angle = Mathf.Clamp(angle, leftMin, leftMax);
-        }
+        if (facingLeft)
+            dir.x = -dir.x;
+ 
 
-        transform.rotation = Quaternion.Euler(0, 0, angle);
-    }
+        // Local (facing-relative) angle
+        float localAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
-    // call this from player movement
-    public void SetFacing(bool isRight)
-    {
-        facingRight = isRight;
+        // Clamp local angle
+        localAngle = Mathf.Clamp(localAngle, minAngle, maxAngle);
+
+        // Convert back into world space
+        float finalAngle = facingLeft ? (-localAngle) : localAngle;
+
+        // Apply rotation
+        transform.rotation = Quaternion.Euler(0, 0, finalAngle);
     }
 }
