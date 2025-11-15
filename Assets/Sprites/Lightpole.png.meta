@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e3a204ab738a01c469c82accfc09f794
+guid: d33ac76258709f14cbaa041b6723de25
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1117452750546159443
-    second: KeyS_0
+      213: 3157008450809913897
+    second: Lightpole_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KeyS_0
+      name: Lightpole_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 4
+        y: 4
+        width: 24
+        height: 41
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: da8b966d4a20e70f0800000000000000
-      internalID: -1117452750546159443
+      spriteID: 9226e6f9572ffcb20800000000000000
+      internalID: 3157008450809913897
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      KeyS_0: -1117452750546159443
+      Lightpole_0: 3157008450809913897
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
