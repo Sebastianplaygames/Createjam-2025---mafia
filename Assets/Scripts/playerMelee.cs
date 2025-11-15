@@ -1,5 +1,6 @@
 using UnityEngine;
 using DefaultNamespace;
+using System.Collections; 
 
 public class playerMelee : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class playerMelee : MonoBehaviour
 
     void Attack()
 {
+    StartCoroutine(Swing());
     Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
     foreach (Collider2D enemy in hitEnemies)
@@ -42,4 +44,24 @@ public class playerMelee : MonoBehaviour
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
+    IEnumerator Swing()
+    {
+        float swingAngle = -120f;
+        float swingTime = 0.15f;
+
+        Quaternion startRot = transform.rotation;
+        Quaternion endRot = startRot * Quaternion.Euler(0, 0, swingAngle);
+
+        float t = 0;
+        while (t < swingTime)
+        {
+            t += Time.deltaTime;
+            transform.rotation = Quaternion.Lerp(startRot, endRot, t / swingTime);
+            yield return null;
+        }
+
+        transform.rotation = startRot;
+    }
+
+
 }

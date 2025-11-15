@@ -20,6 +20,13 @@ public class EnemyController : MonoBehaviour, IDamagable
     public Animator animator;
 
     public Transform player;
+    private IEnemyBehavior behavior;
+
+    private void Awake()
+    {
+        behavior = GetComponent<IEnemyBehavior>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -65,7 +72,8 @@ public class EnemyController : MonoBehaviour, IDamagable
                 attackTimer -= Time.deltaTime;
                 if (attackTimer <= 0f)
                 {
-                    DoAttack();
+                    Debug.Log("enemy attacking");
+                    behavior?.Attack(player);
                     attackTimer = attackCooldown;
                 }
                 if (dist > attackRange + 0.5f)
