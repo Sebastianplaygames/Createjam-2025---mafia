@@ -1,4 +1,5 @@
 using UnityEngine;
+using DefaultNamespace;
 
 public class playerMelee : MonoBehaviour
 {
@@ -6,7 +7,7 @@ public class playerMelee : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = 0.5f;
     public LayerMask enemyLayers;
-    public int damage = 10;
+    public int damage = 1;
     public float attackRate = 2f;
     private float nextAttackTime = 0f;
 
@@ -21,16 +22,18 @@ public class playerMelee : MonoBehaviour
     }
 
     void Attack()
-    {
-        // Detect enemies in range
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
+{
+    Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
-        foreach(Collider2D enemy in hitEnemies)
+    foreach (Collider2D enemy in hitEnemies)
+    {
+        IDamagable damagable = enemy.GetComponent<IDamagable>();
+        if (damagable != null)
         {
-            // Damage them
-            //enemy.GetComponent<EnemyHealth>()?.TakeDamage(damage);
+            damagable.TakeDamage(damage);
         }
     }
+}
 
     void OnDrawGizmosSelected()
     {

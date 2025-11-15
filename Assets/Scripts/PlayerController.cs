@@ -1,12 +1,14 @@
 using UnityEngine;
+using DefaultNamespace;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDamagable
 {
     public Rigidbody2D playerRigidbody;
     public float moveSpeed = 5f;
     public float acceleration = 20f;
     public float deceleration = 30f;
     public float directionalResponsiveness =100f;
+    public int health = 10;
 
     private Vector2 input;
     private Vector2 desiredVelocity;
@@ -49,5 +51,19 @@ public class PlayerController : MonoBehaviour
         }
     playerRigidbody.linearVelocity = velocity;
 
+    }
+
+    public void TakeDamage(int damageAmount)
+    {
+        health -= damageAmount;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+    private void Die()
+    {
+        // Handle player death (e.g., play animation, restart level, etc.)
+        Debug.Log("Player has died.");
     }
 }
