@@ -165,7 +165,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &89602545
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,6 +349,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponLook
   offsetY: -0.5
+  minAngle: -40
+  maxAngle: 70
 --- !u!212 &505254764
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -723,6 +725,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1992225325772292878, guid: bf9d605951b9dc24a992d335bc4dcdc6, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2473108891555577273, guid: bf9d605951b9dc24a992d335bc4dcdc6, type: 3}
       propertyPath: m_Controller
       value: 
