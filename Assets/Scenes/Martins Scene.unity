@@ -119,6 +119,27 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &131896026 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8523510550645412814, guid: 0fa81c87a94ec1741b1b591f8b6a54ab, type: 3}
+  m_PrefabInstance: {fileID: 1515917241}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &131896032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131896026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 199487b92ec5d6b448b9a12e7f9220fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  maxAmmo: 7
+  ammo: 7
+  reloadTime: 1.2
+  isReloading: 0
 --- !u!1 &160905884
 GameObject:
   m_ObjectHideFlags: 0
@@ -77531,6 +77552,13 @@ MonoBehaviour:
   leaveAggroMultiplier: 1.2
   attackCooldown: 2
   deathParticle: {fileID: 8494475345009556509, guid: 10b5185d2df483947bd1437bd55f9fd3, type: 3}
+  AttackClip: {fileID: 0}
+  MouseFather: 0
+  Scargaroo: 0
+  useBurstFiring: 0
+  burstDuration: 2
+  burstCooldown: 4
+  muzzleFlash: {fileID: 0}
   animator: {fileID: 1896500335}
   player: {fileID: 1894863403}
 --- !u!50 &1145471028
@@ -77743,6 +77771,13 @@ MonoBehaviour:
   leaveAggroMultiplier: 1.2
   attackCooldown: 1.5
   deathParticle: {fileID: 8494475345009556509, guid: 10b5185d2df483947bd1437bd55f9fd3, type: 3}
+  AttackClip: {fileID: 0}
+  MouseFather: 0
+  Scargaroo: 0
+  useBurstFiring: 0
+  burstDuration: 2
+  burstCooldown: 4
+  muzzleFlash: {fileID: 0}
   animator: {fileID: 1041454136}
   player: {fileID: 1894863403}
 --- !u!114 &1158781658
@@ -78154,6 +78189,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4637790404326216003, guid: 0fa81c87a94ec1741b1b591f8b6a54ab, type: 3}
+      propertyPath: health
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4962108402774843476, guid: 0fa81c87a94ec1741b1b591f8b6a54ab, type: 3}
+      propertyPath: ammo
+      value: 
+      objectReference: {fileID: 131896032}
     - target: {fileID: 8706941499964028981, guid: 0fa81c87a94ec1741b1b591f8b6a54ab, type: 3}
       propertyPath: m_Name
       value: player 1
@@ -78161,7 +78204,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8523510550645412814, guid: 0fa81c87a94ec1741b1b591f8b6a54ab, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 131896032}
   m_SourcePrefab: {fileID: 100100000, guid: 0fa81c87a94ec1741b1b591f8b6a54ab, type: 3}
 --- !u!1 &1528899879
 GameObject:
@@ -78389,6 +78435,8 @@ GameObject:
   - component: {fileID: 1848195745}
   - component: {fileID: 1848195748}
   - component: {fileID: 1848195749}
+  - component: {fileID: 1848195750}
+  - component: {fileID: 1848195751}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -78539,6 +78587,34 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: -10}
   movementLookAhead: 2
   aimLookAhead: 3
+--- !u!114 &1848195750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848195744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62684131078c8c419fa4ae796e539f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHPUI
+  player: {fileID: 1894863407}
+  animhealth: {fileID: 2083425244}
+--- !u!114 &1848195751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848195744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b6f4de223b07954096f666baf9cfb89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  ammo: {fileID: 131896032}
+  animammo: {fileID: 1221650110}
 --- !u!1 &1858764507
 GameObject:
   m_ObjectHideFlags: 0
@@ -78703,6 +78779,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2635153431373837681, guid: 0fa81c87a94ec1741b1b591f8b6a54ab, type: 3}
   m_PrefabInstance: {fileID: 1515917241}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1894863407 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4637790404326216003, guid: 0fa81c87a94ec1741b1b591f8b6a54ab, type: 3}
+  m_PrefabInstance: {fileID: 1515917241}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0000d89750902740a371aee6a917bc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1896500332
 GameObject:
   m_ObjectHideFlags: 0
