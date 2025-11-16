@@ -350,8 +350,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 470, y: 218}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 745, y: 363}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &94200443
 MonoBehaviour:
@@ -24005,7 +24005,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ammo
   maxAmmo: 7
   ammo: 7
-  reloadTime: 1.2
   isReloading: 0
 --- !u!1001 &957369117
 PrefabInstance:
@@ -24595,8 +24594,8 @@ Transform:
   m_GameObject: {fileID: 1604618959}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -209, y: -87, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: -404, y: -172, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 109862541}
@@ -24737,8 +24736,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 467, y: -167.8}
-  m_SizeDelta: {x: 100, y: 200}
+  m_AnchoredPosition: {x: 763, y: -285}
+  m_SizeDelta: {x: 150, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1842600731
 Animator:
