@@ -95,6 +95,12 @@ MonoBehaviour:
   attackCooldown: 2
   deathParticle: {fileID: 8494475345009556509, guid: 10b5185d2df483947bd1437bd55f9fd3, type: 3}
   AttackClip: {fileID: 8608090709671445529}
+  MouseFather: 0
+  Scargaroo: 0
+  useBurstFiring: 0
+  burstDuration: 2
+  burstCooldown: 4
+  muzzleFlash: {fileID: 0}
   animator: {fileID: 4102920079341881785}
   player: {fileID: 0}
 --- !u!195 &1624690818737365327

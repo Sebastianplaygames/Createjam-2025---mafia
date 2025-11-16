@@ -46,7 +46,7 @@ public class EnemyController : MonoBehaviour, IDamagable
             useBurstFiring = true;
             burstDuration = 4.5f; // minigun madness
             burstCooldown = 5f;
-            attackCooldown = 0.1f; // even faster
+            attackCooldown = 0.07f; // even faster
         }
         else if (Scargaroo)
         {
