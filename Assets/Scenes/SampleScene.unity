@@ -217,6 +217,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7423148}
   m_CullTransparentMesh: 1
+--- !u!1001 &52502595
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 57.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047612895886166126, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_Name
+      value: RangedKangaroo (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563194152005146280, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2023144082}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
 --- !u!1 &62105005
 GameObject:
   m_ObjectHideFlags: 0
@@ -83590,6 +83651,128 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+--- !u!1001 &222757348
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 63.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047612895886166126, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_Name
+      value: RangedKangaroo (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563194152005146280, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2023144082}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+--- !u!1001 &248114341
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 57.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047612895886166126, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_Name
+      value: RangedKangaroo (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563194152005146280, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2023144082}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
 --- !u!1001 &253813408
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -85105,6 +85288,67 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5dfefe717eb42f449caa6a5e0c87e68, type: 3}
+--- !u!1001 &1375479739
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 70.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 366646777805980552, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047612895886166126, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: m_Name
+      value: RangedKangaroo (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563194152005146280, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2023144082}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dcc7bfa315f6a0241af5cb00d7774f37, type: 3}
 --- !u!1 &1378360918
 GameObject:
   m_ObjectHideFlags: 0
@@ -88466,7 +88710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3285793344920356632, guid: 6291e2cf17a80604aadeb3573bf77be0, type: 3}
       propertyPath: projectileSpeed
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7588600889947784968, guid: 6291e2cf17a80604aadeb3573bf77be0, type: 3}
       propertyPath: m_Controller
@@ -88526,9 +88770,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 662316305642772219, guid: dcb946a207e740f4ebc99ca2faeab813, type: 3}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 662316305642772219, guid: dcb946a207e740f4ebc99ca2faeab813, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 2023144082}
+    - target: {fileID: 662316305642772219, guid: dcb946a207e740f4ebc99ca2faeab813, type: 3}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3230599906588961423, guid: dcb946a207e740f4ebc99ca2faeab813, type: 3}
       propertyPath: m_Name
       value: Little Friend
@@ -88598,6 +88850,10 @@ SceneRoots:
   - {fileID: 802564597}
   - {fileID: 1057525309}
   - {fileID: 2140932797}
+  - {fileID: 1375479739}
+  - {fileID: 52502595}
+  - {fileID: 248114341}
+  - {fileID: 222757348}
   - {fileID: 1672512249}
   - {fileID: 995295345}
   - {fileID: 1920751175}
