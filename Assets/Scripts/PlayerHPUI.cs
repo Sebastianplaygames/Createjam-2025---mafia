@@ -1,17 +1,15 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerHPUI : MonoBehaviour
 {
-    public PlayerController player;    
-    public Image hpImage;              // The UI image on the Canvas
-    public Sprite[] hpSprites;         // 5 sprites (0–4)
+    public PlayerController player; 
+    public Animator animhealth;     
 
     private int lastHP;
 
     private void Start()
     {
-        lastHP = player.health;
+        lastHP = -1;  // force first update
         UpdateHPUI();
     }
 
@@ -26,8 +24,6 @@ public class PlayerHPUI : MonoBehaviour
 
     private void UpdateHPUI()
     {
-        int hp = Mathf.Clamp(player.health, 0, hpSprites.Length - 1);
-
-        hpImage.sprite = hpSprites[hp];
+        animhealth.SetInteger("HP", player.health);
     }
 }
