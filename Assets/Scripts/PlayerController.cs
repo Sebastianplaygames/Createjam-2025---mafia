@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using DefaultNamespace;
 
 public class PlayerController : MonoBehaviour, IDamagable
@@ -89,6 +90,6 @@ else if (input.x < -0.1f)
     {
         // Handle player death (e.g., play animation, restart level, etc.)
         Debug.Log("Player has died.");
-
+        SceneManager.LoadScene("Death scene");
     }
 }
