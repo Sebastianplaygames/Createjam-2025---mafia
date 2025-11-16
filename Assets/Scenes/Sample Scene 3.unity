@@ -25015,7 +25015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecab24951980e4446813ef876834df1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
-  killsNeeded: 1
+  killsNeeded: 7
   enemies:
   - {fileID: 704276991}
   - {fileID: 1674070703}
