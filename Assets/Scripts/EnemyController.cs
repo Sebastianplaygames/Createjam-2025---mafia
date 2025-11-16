@@ -18,6 +18,19 @@ public class EnemyController : MonoBehaviour, IDamagable
     public float attackCooldown = 1f;
     private float attackTimer = 0f;
     public ParticleSystem deathParticle;
+    public AudioSource AttackClip;
+
+    
+    //boss things
+    public bool MouseFather;
+    public bool Scargaroo;
+    public bool useBurstFiring = false;
+    public float burstDuration = 2f;
+    public float burstCooldown = 4f;
+    private float burstTimer = 0f;
+    private bool inBurstCooldown = false;
+    private bool canShoot = true; 
+    public ParticleSystem muzzleFlash;
 
     public Animator animator;
 
@@ -27,11 +40,53 @@ public class EnemyController : MonoBehaviour, IDamagable
     private void Awake()
     {
         behavior = GetComponent<IEnemyBehavior>();
-    }
 
+        if (MouseFather)
+        {
+            useBurstFiring = true;
+            burstDuration = 4.5f; // minigun madness
+            burstCooldown = 5f;
+            attackCooldown = 0.1f; // even faster
+        }
+        else if (Scargaroo)
+        {
+            useBurstFiring = true;
+            burstDuration = 2.5f;  // tommy gun
+            burstCooldown = 4f;
+            attackCooldown = 0.2f; // shoot fast
+        }
+    }
+    
+    private void HandleBurstFiring()
+    {
+        if (!useBurstFiring) return; // normal enemies skip this entirely
+
+        if (inBurstCooldown)
+        {
+            burstTimer -= Time.deltaTime;
+            if (burstTimer <= 0f)
+            {
+                inBurstCooldown = false;
+                canShoot = true;              // boss may shoot again
+                burstTimer = burstDuration;   // reset burst time
+            }
+            return;
+        }
+
+        // currently in burst
+        burstTimer -= Time.deltaTime;
+        if (burstTimer <= 0f)
+        {
+            inBurstCooldown = true;
+            canShoot = false;          // STOP shooting
+            burstTimer = burstCooldown;
+        }
+    }
+    
     // Update is called once per frame
     void Update()
     {
+        HandleBurstFiring();
         animator.SetBool("isMoving", currentState == EnemyState.Chase);
         animator.SetBool("isAttacking", currentState == EnemyState.Attack);
         animator.SetBool("isDead", currentState == EnemyState.Dead);
@@ -82,8 +137,13 @@ public class EnemyController : MonoBehaviour, IDamagable
                 movement.faceTarget(player);
                 movement.stop();
                 attackTimer -= Time.deltaTime;
-                if (attackTimer <= 0f)
+                if (canShoot && attackTimer <= 0f)
                 {
+                    if (muzzleFlash != null)
+                    {
+                        muzzleFlash.Play();
+                    }
+                    AttackClip.Play();
                     Debug.Log("enemy attacking");
                     behavior?.Attack(player);
                     attackTimer = attackCooldown;
@@ -119,11 +179,6 @@ public class EnemyController : MonoBehaviour, IDamagable
         currentState = EnemyState.Dead;
         movement.stop();
         Destroy(gameObject, 0.1f); // small delay so particle spawns first
-    }
-
-    public void DoAttack()
-    {
-        Debug.Log("enemy attacks");
     }
 
     public void targetPlayer()
