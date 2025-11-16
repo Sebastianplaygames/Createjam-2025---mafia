@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour
 {
+    public int killsNeeded = 1;
     [Header("Assign the enemy GameObjects here")]
     public GameObject[] enemies;
 
@@ -23,7 +24,7 @@ public class SceneChanger : MonoBehaviour
         }
 
         // If 2 or more enemies are dead → change scene
-        if (deadCount >= 2)
+        if (deadCount >= killsNeeded)
         {
             SceneManager.LoadScene(nextSceneName);
         }
