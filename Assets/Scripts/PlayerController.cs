@@ -39,16 +39,17 @@ public class PlayerController : MonoBehaviour, IDamagable
 
     animator.SetBool("IsRunning", input.magnitude > 0.1f);
 
-    if (input.x > 0.1f)
+Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+if (mouseWorld.x > transform.position.x)
 {
     transform.localScale = new Vector3(1, 1, 1);
 }
-else if (input.x < -0.1f)
+else
 {
     transform.localScale = new Vector3(-1, 1, 1);
 }
     }
-
 
     private void FixedUpdate()
     {
