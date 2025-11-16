@@ -24,6 +24,11 @@ public class PlayerRanged : MonoBehaviour
 
     private void Update()
     {
+
+        if (!ammo.HasAmmo())
+            {
+                ammo.isReloading = true;
+            }
         if (ammo.isReloading == true)
         {
             print("Reload has been changed");
@@ -41,14 +46,6 @@ public class PlayerRanged : MonoBehaviour
         }
         if (Input.GetMouseButton(1) && Time.time >= nextFireTime)
         {
-            if (!ammo.HasAmmo())
-            {
-                ammo.isReloading = true;
-            
-            }
-
-            
-
             switcher.ShowRanged();
             Shoot();
             nextFireTime = Time.time + (1f / fireRate);
