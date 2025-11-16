@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: b358233888da0294fbf4ceaa6654434c
+guid: 1d72b3b884cd1f94697ed959cdb52893
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1130123410398433707
-    second: Minigun_0
+      213: 827439925401077734
+    second: Scargaroo RHM Attack_0
+  - first:
+      213: -6409579170413662922
+    second: Scargaroo RHM Attack_1
+  - first:
+      213: 2260950909754782428
+    second: Scargaroo RHM Attack_2
+  - first:
+      213: -1649907158604405493
+    second: Scargaroo RHM Attack_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,23 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Minigun_0
+      name: Scargaroo RHM Attack_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 7
-        width: 33
-        height: 18
-      alignment: 9
-      pivot: {x: 0.25623503, y: 0.8277284}
+        x: 18
+        y: 2
+        width: 36
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ba1d62d01410faf00800000000000000
-      internalID: 1130123410398433707
+      spriteID: 6e7c18a6a38ab7b00800000000000000
+      internalID: 827439925401077734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scargaroo RHM Attack_1
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 2
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63d20c334b99c07a0800000000000000
+      internalID: -6409579170413662922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scargaroo RHM Attack_2
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 2
+        width: 44
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd2b7869fd2806f10800000000000000
+      internalID: 2260950909754782428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Scargaroo RHM Attack_3
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 2
+        width: 36
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b05a20b4e2a5a19e0800000000000000
+      internalID: -1649907158604405493
       vertices: []
       indices: 
       edges: []
@@ -125,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 992f6acb8def1974ea108493ea4b3334
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Minigun_0: 1130123410398433707
+      Scargaroo RHM Attack_0: 827439925401077734
+      Scargaroo RHM Attack_1: -6409579170413662922
+      Scargaroo RHM Attack_2: 2260950909754782428
+      Scargaroo RHM Attack_3: -1649907158604405493
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
