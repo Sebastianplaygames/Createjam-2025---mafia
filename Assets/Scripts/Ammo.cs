@@ -5,8 +5,7 @@ public class Ammo : MonoBehaviour
 {
     public int maxAmmo = 7;
     public int ammo = 7;
-
-    public float reloadTime = 1.2f;  // how long reload takes
+    // how long reload takes
     public bool isReloading = false;
 
     public bool HasAmmo()
@@ -20,14 +19,10 @@ public class Ammo : MonoBehaviour
             ammo--;
     }
 
-    public IEnumerator AutoReload()
+    public void AutoReload()
     {
-        isReloading = true;
-
-        // wait for reload
-        yield return new WaitForSeconds(reloadTime);
-
+        print("I am realoding");
         ammo = maxAmmo;
-        isReloading = false;
+        print(ammo);
     }
 }

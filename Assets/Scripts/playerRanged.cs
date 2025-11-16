@@ -6,7 +6,9 @@ public class PlayerRanged : MonoBehaviour
     public Transform firePoint;
     public GameObject projectilePrefab;
     public Ammo ammo;
+    public float reloadTime = 1.2f;
 
+    private float Timer = 0;
     public float fireRate = 1f;
     private float nextFireTime = 0f;
 
@@ -22,18 +24,30 @@ public class PlayerRanged : MonoBehaviour
 
     private void Update()
     {
-        if (ammo.isReloading)
-            return;
+        if (ammo.isReloading == true)
+        {
+            print("Reload has been changed");
+            Timer += Time.deltaTime;
+            print(Timer);
+            if (Timer > reloadTime)
+            {   
+                print("I should reload");
+                ammo.isReloading = false;
+                Timer = 0;
+                ammo.AutoReload();
+            }
 
+            return;
+        }
         if (Input.GetMouseButton(1) && Time.time >= nextFireTime)
         {
             if (!ammo.HasAmmo())
             {
-                StartCoroutine(ammo.AutoReload());
-                if (reloadSound != null)
-                    gunAudio.PlayOneShot(reloadSound);
-                return;
+                ammo.isReloading = true;
+            
             }
+
+            
 
             switcher.ShowRanged();
             Shoot();
