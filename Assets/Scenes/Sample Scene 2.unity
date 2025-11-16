@@ -12843,7 +12843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneChanger
   enemies:
   - {fileID: 704276991}
-  nextSceneName: 
+  nextSceneName: Ending
 --- !u!4 &1935455131
 Transform:
   m_ObjectHideFlags: 0
