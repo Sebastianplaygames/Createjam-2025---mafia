@@ -98,6 +98,7 @@ MonoBehaviour:
   useBurstFiring: 0
   burstDuration: 2
   burstCooldown: 4
+  muzzleFlash: {fileID: 0}
   animator: {fileID: 3839179372149923905}
   player: {fileID: 0}
 --- !u!195 &462927822979346730
